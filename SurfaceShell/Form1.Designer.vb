@@ -33,6 +33,8 @@ Partial Class Form1
         Me.ShutDownButton = New System.Windows.Forms.Button()
         Me.BatteryLife = New System.Windows.Forms.Label()
         Me.PCName = New System.Windows.Forms.Label()
+        Me.ItemVerifierBtn = New System.Windows.Forms.Button()
+        Me.LocationModifierBtn = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'SecondTimer
@@ -163,6 +165,34 @@ Partial Class Form1
         Me.PCName.Text = "SURFACE-1"
         Me.PCName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'ItemVerifierBtn
+        '
+        Me.ItemVerifierBtn.BackColor = System.Drawing.Color.DimGray
+        Me.ItemVerifierBtn.FlatAppearance.BorderColor = System.Drawing.Color.Gray
+        Me.ItemVerifierBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ItemVerifierBtn.Font = New System.Drawing.Font("Segoe UI Light", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ItemVerifierBtn.ForeColor = System.Drawing.Color.White
+        Me.ItemVerifierBtn.Location = New System.Drawing.Point(12, 246)
+        Me.ItemVerifierBtn.Name = "ItemVerifierBtn"
+        Me.ItemVerifierBtn.Size = New System.Drawing.Size(240, 100)
+        Me.ItemVerifierBtn.TabIndex = 9
+        Me.ItemVerifierBtn.Text = "Item Verifier"
+        Me.ItemVerifierBtn.UseVisualStyleBackColor = False
+        '
+        'LocationModifierBtn
+        '
+        Me.LocationModifierBtn.BackColor = System.Drawing.Color.DimGray
+        Me.LocationModifierBtn.FlatAppearance.BorderColor = System.Drawing.Color.Gray
+        Me.LocationModifierBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LocationModifierBtn.Font = New System.Drawing.Font("Segoe UI Light", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LocationModifierBtn.ForeColor = System.Drawing.Color.White
+        Me.LocationModifierBtn.Location = New System.Drawing.Point(12, 363)
+        Me.LocationModifierBtn.Name = "LocationModifierBtn"
+        Me.LocationModifierBtn.Size = New System.Drawing.Size(240, 100)
+        Me.LocationModifierBtn.TabIndex = 10
+        Me.LocationModifierBtn.Text = "Locations Modifier"
+        Me.LocationModifierBtn.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -171,6 +201,8 @@ Partial Class Form1
         Me.BackgroundImage = Global.SurfaceShell.My.Resources.Resources.Desktop
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 800)
+        Me.Controls.Add(Me.LocationModifierBtn)
+        Me.Controls.Add(Me.ItemVerifierBtn)
         Me.Controls.Add(Me.ClockTime)
         Me.Controls.Add(Me.PCName)
         Me.Controls.Add(Me.BatteryLife)
@@ -200,4 +232,6 @@ Partial Class Form1
     Friend WithEvents ShutDownButton As Button
     Friend WithEvents BatteryLife As Label
     Friend WithEvents PCName As Label
+    Friend WithEvents ItemVerifierBtn As Button
+    Friend WithEvents LocationModifierBtn As Button
 End Class

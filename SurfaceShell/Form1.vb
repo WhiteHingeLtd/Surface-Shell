@@ -91,4 +91,12 @@ Public Class Form1
             End If
         End If
     End Sub
+
+    Private Sub ItemVerifierBtn_Click(sender As Object, e As EventArgs) Handles ItemVerifierBtn.Click
+        Process.Start("\\WIN-NOHLS1H9ER8\Data Storage\Intra\AppPublish\DV\DeliveryVerifier.application")
+    End Sub
+
+    Private Sub LocationModifierBtn_Click(sender As Object, e As EventArgs) Handles LocationModifierBtn.Click
+        Process.Start("\\WIN-NOHLS1H9ER8\Data Storage\Intra\AppPublish\LocationsModifier\LocationsModifier.application")
+    End Sub
 End Class
