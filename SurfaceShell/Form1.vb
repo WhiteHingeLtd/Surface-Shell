@@ -33,11 +33,16 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Process.Start("C:\Windows\System32\TASKKILL.exe", "/F /IM explorer.exe")
-        PCName.Text = My.Computer.Name
-        '20/05/16 - Autoload surfacepicker.
-        'Process.Start("\\WIN-NOHLS1H9ER8\Data Storage\Intra\AppPublish\SurfacePicker\SurfacePicker.application") 'Not anymore
-        Process.Start("T:\AppData\Utility\ResetSP.bat")
+        Dim wpf As New shellwpf
+        wpf.Show()
+        Me.hide()
+
+
+        'Process.Start("C:\Windows\System32\TASKKILL.exe", "/F /IM explorer.exe")
+        'PCName.Text = My.Computer.Name
+        ''20/05/16 - Autoload surfacepicker.
+        ''Process.Start("\\WIN-NOHLS1H9ER8\Data Storage\Intra\AppPublish\SurfacePicker\SurfacePicker.application") 'Not anymore
+        'Process.Start("T:\AppData\Utility\ResetSP.bat")
     End Sub
 
     Private Sub SecondTimer_Tick(sender As Object, e As EventArgs) Handles SecondTimer.Tick
@@ -71,7 +76,7 @@ Public Class Form1
         PrepackLauncher.Visible = False
         GPUpdateButton.Visible = False
         ShutDownButton.Visible = False
-        Application.DoEvents()
+        
         Process.Start("gpupdate.exe", "/Force /Boot")
     End Sub
 
@@ -79,8 +84,6 @@ Public Class Form1
         Dim newOSString As String = My.Computer.Info.OSFullName
 
         If MsgBox("Are you sure?", MsgBoxStyle.YesNo, "Shutdown?") = MsgBoxResult.Yes Then
-
-
 
             If InStr(newOSString, "10") Then
                 Process.Start("Shutdown.exe", "/s /hybrid /t 0")

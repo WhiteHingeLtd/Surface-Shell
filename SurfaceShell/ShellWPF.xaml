@@ -5,41 +5,198 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SurfaceShell"
         mc:Ignorable="d"
-        Title="Surface Shell" Height="765.8" Width="1366" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="#FF252525" Foreground="#FFE2E2E2">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="24*"/>
-            <RowDefinition Height="586*"/>
-            <RowDefinition Height="97*"/>
-            <RowDefinition Height="59"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="22*"/>
-            <ColumnDefinition Width="335*"/>
-            <ColumnDefinition Width="20*"/>
-            <ColumnDefinition Width="614*"/>
-            <ColumnDefinition Width="19*"/>
-            <ColumnDefinition Width="334*"/>
-            <ColumnDefinition Width="22*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.Background>
-            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Desktop.jpg"/>
-        </Grid.Background>
-        <Viewbox Grid.Column="3" Margin="0" Grid.Row="2">
-            <TextBlock x:Name="DeviceName" TextWrapping="Wrap" Text="Device Name"/>
-        </Viewbox>
-        <Viewbox x:Name="DateBox" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top">
-            <TextBlock x:Name="CurrentDate" TextWrapping="Wrap" Text="Current Date"/>
-        </Viewbox>
-        <Viewbox x:Name="DateBox_Copy" Grid.Column="5" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0" MaxHeight="100">
-            <TextBlock x:Name="CurrentTime" TextWrapping="Wrap" Text="Current Time"/>
-        </Viewbox>
-        <Viewbox x:Name="DateBox_Copy1" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" MaxHeight="100">
-            <TextBlock x:Name="BatteryPercentage" TextWrapping="Wrap" Text="Battery Percentage"/>
-        </Viewbox>
-        <Viewbox x:Name="DateBox_Copy2" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="0,0,0,5">
-            <TextBlock x:Name="BatteryRemainingTime" TextWrapping="Wrap" Text="Battery Remaining Time"/>
-        </Viewbox>
+        Title="Surface Shell" Height="765.8" Width="1366" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="#FF252525" Foreground="#FFE2E2E2" Initialized="Window_Initialized" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style x:Key="Button.Trans" TargetType="{x:Type Button}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <SolidColorBrush Color="#FFFFFFFF"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="#668C8C8C">
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                                SnapsToDevicePixels="True"
+                                Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter 
+                                    Margin="2"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    RecognizesAccessKey="True" />
 
-    </Grid>
+                            </Grid>
+                        </Border>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation To="#66AAAAAA"
+                                                Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)" 
+                                                FillBehavior="HoldEnd" Duration="0:0:0.1" AutoReverse="False" RepeatBehavior="1x"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation
+                                    Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="HoldEnd" Duration="0:0:0.1" AutoReverse="False" RepeatBehavior="1x"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+
+                </Trigger>
+
+
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Button.Opaque" TargetType="{x:Type Button}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <SolidColorBrush Color="#FFFFFFFF"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="#FF4C4C4C">
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                                SnapsToDevicePixels="True"
+                                Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter 
+                                    Margin="2"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    RecognizesAccessKey="True" />
+
+                            </Grid>
+                        </Border>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation To="#FF666666"
+                                                Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)" 
+                                                FillBehavior="HoldEnd" Duration="0:0:0.1" AutoReverse="False" RepeatBehavior="1x"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation
+                                    Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)" 
+                                    FillBehavior="HoldEnd" Duration="0:0:0.1" AutoReverse="False" RepeatBehavior="1x"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+
+                </Trigger>
+
+
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Button.NoHighlight" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                                SnapsToDevicePixels="True"
+                                Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter 
+                                    Margin="2"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    RecognizesAccessKey="True" />
+
+                            </Grid>
+                        </Border>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Viewbox>
+
+        <Grid Width="1366" Height="768" Background="#FF3C3C3C">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24*"/>
+                <RowDefinition Height="586*"/>
+                <RowDefinition Height="97*"/>
+                <RowDefinition Height="59"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="22*"/>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="56*"/>
+                <ColumnDefinition Width="614*"/>
+                <ColumnDefinition Width="56*"/>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="22*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Grid.Column="3" Margin="0" Grid.Row="2">
+                <TextBlock x:Name="DeviceName" TextWrapping="Wrap" Text="Device Name"/>
+            </Viewbox>
+            <Viewbox x:Name="DateBox" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Height="59" Width="251">
+                <TextBlock x:Name="CurrentDate" TextWrapping="Wrap" Text="Current Date"/>
+            </Viewbox>
+            <Viewbox x:Name="DateBox_Copy" Grid.Column="4" Grid.Row="2" VerticalAlignment="Bottom" Margin="0" MaxHeight="100" Width="355" Grid.ColumnSpan="2" HorizontalAlignment="Right">
+                <TextBlock x:Name="CurrentTime" TextWrapping="Wrap" Text="Current Time"/>
+            </Viewbox>
+            <Viewbox x:Name="DateBox_Copy1" Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" MaxHeight="100" Grid.ColumnSpan="2" HorizontalAlignment="Left">
+                <TextBlock x:Name="BatteryPercentage" TextWrapping="Wrap" Text="Battery Percentage"/>
+            </Viewbox>
+            <Viewbox x:Name="DateBox_Copy2" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="42" Width="331">
+                <TextBlock x:Name="BatteryRemainingTime" TextWrapping="Wrap" Text="Battery Remaining Time"/>
+            </Viewbox>
+            <Button x:Name="WarehouseApplicationButton" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light" Margin="0">
+                <TextBlock Text="Warehouse Application" Margin="10,0" TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="PrepackButton" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light" Margin="0,130,0,0">
+                <TextBlock Text="Prepack" Margin="10,0" TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="ItemVerifierButton" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light" Margin="0,260,0,0">
+                <TextBlock Text="Item Verifier" Margin="10,0" TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="LocationsModifierButton" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light" Margin="0,390,0,0">
+                <TextBlock Text="Locations Modifier" Margin="10,0" TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="UpdatePolicyButton" VerticalAlignment="Top" Grid.Column="5" Grid.Row="1" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light">
+                <TextBlock Text="Update Policy" Margin="10,0" TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="ShutDownButton" VerticalAlignment="Top" Grid.Column="5" Grid.Row="1" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light" Margin="0,130,0,0">
+                <TextBlock Text="Shut Down" Margin="10,0" TextWrapping="Wrap"/>
+            </Button>
+            <TextBlock x:Name="debug" Grid.Column="3" HorizontalAlignment="Center" Margin="0,50,0,0" Grid.Row="1" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" FontSize="18" TextAlignment="Right"/>
+
+        </Grid>
+
+    </Viewbox>
 </Window>
