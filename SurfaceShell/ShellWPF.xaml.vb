@@ -128,13 +128,12 @@ Public Class ShellWPF
     End Sub
 
     Private Sub IsRemoteSessionChanged(IsRemoteSession As boolean)
-        try
-            SafeShutdown.Hide()
-        Catch ex As Exception
-
-        End Try
         If IsRemoteSession then
-            
+            try
+                SafeShutdown.Hide()
+            Catch ex As Exception
+
+            End Try
             if StartSurfacePickerOnConnect then
                 StartSurfacePickerOnConnect = False
                 Process.Start("T:\AppData\Utility\ResetSP.bat")
@@ -148,7 +147,7 @@ Public Class ShellWPF
         If MsgBox("Are you sure?", MsgBoxStyle.YesNo, "Shutdown?") = MsgBoxResult.Yes Then
             if CurrentIsRemoteSessionValue then
                 CloseSafeShutdownOnDisconnect = true
-                SafeShutdown.Show()
+                SafeShutdown.Cool()
                 Process.Start("Taskkill.exe","/F /IM SurfacePicker.exe")
                 CloseSafeShutdownOnDisconnect = True
                 StartSurfacePickerOnConnect = true
@@ -169,11 +168,11 @@ Public Class ShellWPF
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         me.Show()
-        'Process.Start("C:\Windows\System32\TASKKILL.exe", "/F /IM explorer.exe")
+        Process.Start("C:\Windows\System32\TASKKILL.exe", "/F /IM explorer.exe")
         DeviceName.Text = My.Computer.Name
         '20/05/16 - Autoload surfacepicker.
         'Process.Start("\\WIN-NOHLS1H9ER8\Data Storage\Intra\AppPublish\SurfacePicker\SurfacePicker.application") 'Not anymore
-        'Process.Start("T:\AppData\Utility\ResetSP.bat")
+        Process.Start("T:\AppData\Utility\ResetSP.bat")
     End Sub
 
     Public Shared Function Check() As Boolean
