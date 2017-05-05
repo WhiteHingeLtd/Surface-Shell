@@ -186,7 +186,7 @@
                 <TextBlock Text="Item Verifier" Margin="10,0" TextWrapping="Wrap"/>
             </Button>
             <Button x:Name="LocationsModifierButton" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light" Margin="0,390,0,0">
-                <TextBlock Text="Locations Modifier" Margin="10,0" TextWrapping="Wrap"/>
+                <TextBlock Text="Location Modifier" Margin="10,0" TextWrapping="Wrap"/>
             </Button>
             <Button x:Name="UpdatePolicyButton" VerticalAlignment="Top" Grid.Column="5" Grid.Row="1" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light">
                 <TextBlock Text="Update Policy" Margin="10,0" TextWrapping="Wrap"/>

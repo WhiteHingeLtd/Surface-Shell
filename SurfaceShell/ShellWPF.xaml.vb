@@ -87,7 +87,7 @@ Public Class ShellWPF
     End Sub
 
     Private Sub LocationsModifierButton_Click(sender As Object, e As System.Windows.RoutedEventArgs) Handles LocationsModifierButton.Click
-        Process.Start("\\WIN-NOHLS1H9ER8\Data Storage\Intra\AppPublish\LocationsModifier\LocationsModifier.application")
+        Process.Start("\\WIN-NOHLS1H9ER8\Data Storage\Intra\AppPublish\LocMod2\LocationModifier2.application")
     End Sub
 
     Private Sub UpdatePolicyButton_Click(sender As Object, e As System.Windows.RoutedEventArgs) Handles UpdatePolicyButton.Click
