@@ -75,7 +75,7 @@ Public Class ShellWPF
         return IntPtr.Zero
     End Function
     Private Sub WarehouseApplicationButton_Click(sender As Object, e As System.Windows.RoutedEventArgs) Handles WarehouseApplicationButton.Click
-        Process.Start("T:\AppData\Utility\ResetSP.bat")
+        Process.Start("T:\ResetSP.bat")
     End Sub
 
     Private Sub PrepackButton_Click(sender As Object, e As System.Windows.RoutedEventArgs) Handles PrepackButton.Click
@@ -136,7 +136,7 @@ Public Class ShellWPF
             End Try
             if StartSurfacePickerOnConnect then
                 StartSurfacePickerOnConnect = False
-                Process.Start("T:\AppData\Utility\ResetSP.bat")
+                Process.Start("T:\ResetSP.bat")
             End If
 
         End If
@@ -172,7 +172,7 @@ Public Class ShellWPF
         DeviceName.Text = My.Computer.Name
         '20/05/16 - Autoload surfacepicker.
         'Process.Start("\\WIN-NOHLS1H9ER8\Data Storage\Intra\AppPublish\SurfacePicker\SurfacePicker.application") 'Not anymore
-        Process.Start("T:\AppData\Utility\ResetSP.bat")
+        Process.Start("T:\ResetSP.bat")
     End Sub
 
     Public Shared Function Check() As Boolean
