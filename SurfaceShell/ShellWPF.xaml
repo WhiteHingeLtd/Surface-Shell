@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SurfaceShell"
         mc:Ignorable="d"
-        Title="Surface Shell" Height="765.8" Width="1366" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="#FF252525" Foreground="#FFE2E2E2" Initialized="Window_Initialized" Loaded="Window_Loaded">
+        Title="Surface Shell" Height="765.8" Width="1366" WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="#FF252525" Foreground="#FFE2E2E2" Loaded="Window_Loaded">
     <Window.Resources>
         <Style x:Key="Button.Trans" TargetType="{x:Type Button}">
             <Setter Property="SnapsToDevicePixels" Value="true"/>
@@ -170,29 +170,14 @@
             <Viewbox x:Name="DateBox_Copy" Grid.Column="4" Grid.Row="2" VerticalAlignment="Bottom" Margin="0" MaxHeight="100" Width="355" Grid.ColumnSpan="2" HorizontalAlignment="Right">
                 <TextBlock x:Name="CurrentTime" TextWrapping="Wrap" Text="Current Time"/>
             </Viewbox>
-            <Viewbox x:Name="DateBox_Copy1" Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" MaxHeight="100" Grid.ColumnSpan="2" HorizontalAlignment="Left">
-                <TextBlock x:Name="BatteryPercentage" TextWrapping="Wrap" Text="Battery Percentage"/>
-            </Viewbox>
-            <Viewbox x:Name="DateBox_Copy2" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="42" Width="331">
-                <TextBlock x:Name="BatteryRemainingTime" TextWrapping="Wrap" Text="Battery Remaining Time"/>
-            </Viewbox>
-            <Button x:Name="WarehouseApplicationButton" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light" Margin="0">
-                <TextBlock Text="Warehouse Application" Margin="10,0" TextWrapping="Wrap"/>
+            <Button x:Name="WarehouseApplicationButton" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Height="250" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light" Margin="0">
+                <TextBlock Text="WMS Desktop" Margin="10,0" TextWrapping="Wrap" FontSize="72" TextAlignment="Center"/>
             </Button>
-            <Button x:Name="PrepackButton" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light" Margin="0,130,0,0">
-                <TextBlock Text="Prepack" Margin="10,0" TextWrapping="Wrap"/>
-            </Button>
-            <Button x:Name="ItemVerifierButton" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light" Margin="0,260,0,0">
-                <TextBlock Text="Item Verifier" Margin="10,0" TextWrapping="Wrap"/>
-            </Button>
-            <Button x:Name="LocationsModifierButton" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light" Margin="0,390,0,0">
-                <TextBlock Text="Location Modifier" Margin="10,0" TextWrapping="Wrap"/>
-            </Button>
-            <Button x:Name="UpdatePolicyButton" VerticalAlignment="Top" Grid.Column="5" Grid.Row="1" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light">
+            <Button x:Name="UpdatePolicyButton" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light" Margin="0,19,0,0" Grid.RowSpan="2">
                 <TextBlock Text="Update Policy" Margin="10,0" TextWrapping="Wrap"/>
             </Button>
-            <Button x:Name="ShutDownButton" VerticalAlignment="Top" Grid.Column="5" Grid.Row="1" Height="120" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light" Margin="0,130,0,0">
-                <TextBlock Text="Shut Down" Margin="10,0" TextWrapping="Wrap"/>
+            <Button x:Name="ShutDownButton" VerticalAlignment="Top" Grid.Column="5" Grid.Row="1" Height="250" Style="{DynamicResource Button.Trans}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Segoe UI Light">
+                <TextBlock Text="Shut Down" Margin="10,0" TextWrapping="Wrap" TextAlignment="Center" FontSize="72"/>
             </Button>
             <TextBlock x:Name="debug" Grid.Column="3" HorizontalAlignment="Center" Margin="0,50,0,0" Grid.Row="1" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" FontSize="18" TextAlignment="Right"/>
 

@@ -37,69 +37,6 @@ Public Class Form1
         wpf.Show()
         Me.hide()
 
-
-        'Process.Start("C:\Windows\System32\TASKKILL.exe", "/F /IM explorer.exe")
-        'PCName.Text = My.Computer.Name
-        ''20/05/16 - Autoload surfacepicker.
-        ''Process.Start("\\WIN-NOHLS1H9ER8\Data Storage\Intra\AppPublish\SurfacePicker\SurfacePicker.application") 'Not anymore
-        'Process.Start("T:\AppData\Utility\ResetSP.bat")
     End Sub
 
-    Private Sub SecondTimer_Tick(sender As Object, e As EventArgs) Handles SecondTimer.Tick
-        'Update Time
-        ClockTime.Text = Now.ToString("HH:mm")
-        ClockDate.Text = Now.ToString("dddd d MMMM")
-
-        'Update Battery
-        Dim power As PowerStatus = SystemInformation.PowerStatus
-        Dim percent As Single = power.BatteryLifePercent
-        BatteryLife.Text = FormatPercent(percent, 0)
-        Dim timeleft As Integer = power.BatteryLifeRemaining
-        TabletName.Text = Math.Round(New TimeSpan(0, 0, timeleft).Hours).ToString + "hr " + Math.Round(New TimeSpan(0, 0, timeleft).Minutes).ToString + "min"
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles PickLauncher.Click
-        Process.Start("\\WIN-NOHLS1H9ER8\Data Storage\Intra\AppPublish\SurfacePicker\SurfacePicker.application")
-    End Sub
-
-    Private Sub PrepackLauncher_Click(sender As Object, e As EventArgs) Handles PrepackLauncher.Click
-        Process.Start("\\WIN-NOHLS1H9ER8\Data Storage\Intra\AppPublish\PPA\PrePackApp.application")
-    End Sub
-
-    Private Sub ClockTime_Click(sender As Object, e As EventArgs) Handles ClockTime.DoubleClick
-        Process.Start("C:\Windows\Explorer.exe")
-        Me.Close()
-    End Sub
-
-    Private Sub GPUpdateButton_Click(sender As Object, e As EventArgs) Handles GPUpdateButton.Click
-        PickLauncher.Visible = False
-        PrepackLauncher.Visible = False
-        GPUpdateButton.Visible = False
-        ShutDownButton.Visible = False
-        
-        Process.Start("gpupdate.exe", "/Force /Boot")
-    End Sub
-
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles ShutDownButton.Click
-        Dim newOSString As String = My.Computer.Info.OSFullName
-
-        If MsgBox("Are you sure?", MsgBoxStyle.YesNo, "Shutdown?") = MsgBoxResult.Yes Then
-
-            If InStr(newOSString, "10") Then
-                Process.Start("Shutdown.exe", "/s /hybrid /t 0")
-            ElseIf InStr(newOSString, "7") Then
-                System.Diagnostics.Process.Start("shutdown", "-s -t 0")
-            Else
-                MsgBox("Something went wrong, run the OS Test")
-            End If
-        End If
-    End Sub
-
-    Private Sub ItemVerifierBtn_Click(sender As Object, e As EventArgs) Handles ItemVerifierBtn.Click
-        Process.Start("\\WIN-NOHLS1H9ER8\Data Storage\Intra\AppPublish\DV\DeliveryVerifier.application")
-    End Sub
-
-    Private Sub LocationModifierBtn_Click(sender As Object, e As EventArgs) Handles LocationModifierBtn.Click
-        Process.Start("\\WIN-NOHLS1H9ER8\Data Storage\Intra\AppPublish\LocationsModifier\LocationsModifier.application")
-    End Sub
 End Class
