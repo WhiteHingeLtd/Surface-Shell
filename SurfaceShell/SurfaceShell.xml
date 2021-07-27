@@ -1,0 +1,61 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SurfaceShell
+</name>
+</assembly>
+<members>
+<member name="T:SurfaceShell.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:SurfaceShell.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:SurfaceShell.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:SurfaceShell.My.Resources.Resources.Desktop">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:SurfaceShell.SafeShutdownWindow">
+<summary>
+SafeShutdownWindow
+</summary>
+</member>
+<member name="M:SurfaceShell.SafeShutdownWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:SurfaceShell.ShellWPF">
+<summary>
+ShellWPF
+</summary>
+</member>
+<member name="M:SurfaceShell.ShellWPF.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:SurfaceShell.ConfirmShutdown">
+<summary>
+ConfirmShutdown
+</summary>
+</member>
+<member name="M:SurfaceShell.ConfirmShutdown.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+</members>
+</doc>
